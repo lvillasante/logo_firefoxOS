@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Ejemplo del logo de firefox OS con animacion</title>
+    <style type="text/css">
+		.phone-container{
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: url(img/phone-overlay.png) 0 0 no-repeat;
+			height: 586px;
+			width: 327px;
+		}
+		.background {
+			height: 373px;
+			width: 244px;
+			background: url(img/screen-overview.jpg) 0 0 no-repeat;
+			position: relative;
+			top: 71px;
+			left: 33px;
+		}
+    	#foxtail {
+			background: url(img/foxtail.png) 0 0 no-repeat;
+			width: 156px;
+			height: 156px;
+			top: 90px;
+  			left: 30px;
+  			/*position: absolute;*/
+		}
+		/* animacion */
+		@keyframes animate-tail {  
+    		0% {background-position: -6864px 0; }
+    		100% {background-position: 0 0;}
+		}
+		#foxtail {
+		  animation: animate-tail 3.75s steps(44) infinite;
+		}	
+    </style>
+
+</head>
+<body>
+	<div class="phone-container"></div>
+	<div class="background">
+		<div id="foxtail"></div>
+	</div>
+
+	<!-- Soporte para browsers obsoletos -->
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="js/jquery.spritely.js"></script>
+    <script type="text/javascript">
+		jQuery(document).ready(function() {
+			jQuery("#foxtail").sprite({ fps: 12, no_of_frames: 44, rewind: true });
+		});
+    </script>
+</body>
+</html>
