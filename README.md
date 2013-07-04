@@ -1,4 +1,4 @@
-logo_firefoxOS
+Logo firefoxOS
 ==============
 
 Logotipo animado de FireFoxOS
